@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from 'reactstrap';
+import AddMovie from './AddMovie/AddMovie.jsx'
 import Image from "../img/MoviesTop.png"
 
 export default () => (
@@ -10,7 +11,7 @@ export default () => (
                 <td width="100px"></td>
                 <td width="80%"></td>
                 <td width="200px">
-                    <Button color="danger" outline ><b>+ ADD MOVIE</b></Button>
+                    <Button outline color="danger" onClick={render(<AddMovie />)}><b>+ ADD MOVIE</b></Button>
                 </td>
             </tr>
             <tr style={{ verticalAlign: 'bottom'}}>
