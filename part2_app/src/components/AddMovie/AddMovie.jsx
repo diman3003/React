@@ -1,37 +1,28 @@
 import React from 'react'
-import { Button } from 'reactstrap' 
+import { Button, Input, Label } from 'reactstrap'
+import { MDBCol, MDBInput } from "mdbreact";
 
 class AddMovie extends React.Component
 {
     render()
     {
-        const [show, setShow] = useState(false);
-
-        const handleClose = () => setShow(false);
-        const handleShow = () => setShow(true);
-      
-
+        return(
         <>
-        <Button variant="primary" onClick={handleShow}>
-            Launch demo modal
-        </Button>
-    
-        <Modal show={show} onHide={handleClose}>
-            <Modal.Header closeButton>
-            <Modal.Title>Modal heading</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
-            <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
-                Close
-            </Button>
-            <Button variant="primary" onClick={handleClose}>
-                Save Changes
-            </Button>
-            </Modal.Footer>
-        </Modal>
-        </>
-
+            <h1>ADD MOVIE</h1>
+            <Label>TITLE</Label>
+            <Input placeholder="Title" className="MovieInput"></Input>
+            <Label>RELEASE DATE</Label>
+            <Input placeholder="Select Date" type="date" className="MovieInput"></Input>
+            <Label>MOVIE URL</Label>
+            <Input placeholder="Movie URL" className="MovieInput"></Input>
+            <Label>GENRE</Label>
+            <Input placeholder="Select Genre" className="MovieInput"></Input>
+            <Label>OVERVIEW</Label>
+            <Input placeholder="Overview" className="MovieInput"></Input>
+            <Label>RUNTIME</Label>
+            <Input placeholder="Runtime" className="MovieInput"></Input>
+            <Button outline color="danger">Reset</Button> <Button color="danger">Submit</Button>
+        </>)
     }
 }
 
