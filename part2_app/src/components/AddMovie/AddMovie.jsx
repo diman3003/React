@@ -1,6 +1,12 @@
-import React from 'react'
+import React, {useState} from "react";
 import { Button, Input, Label } from 'reactstrap'
-import { MDBCol, MDBInput } from "mdbreact";
+import $ from 'jquery';
+//import { MDBCol, MDBInput } from "mdbreact";
+
+function close()
+{
+    alert(this.toggleModal);
+}
 
 class AddMovie extends React.Component
 {
@@ -8,6 +14,9 @@ class AddMovie extends React.Component
     {
         return(
         <>
+            <div className="CloseButton" >
+                <Button outline color="black" style={{color: "white"}} onClick={close}><h2>X</h2></Button>
+            </div>
             <h1>ADD MOVIE</h1>
             <Label>TITLE</Label>
             <Input placeholder="Title" className="MovieInput"></Input>
@@ -21,7 +30,9 @@ class AddMovie extends React.Component
             <Input placeholder="Overview" className="MovieInput"></Input>
             <Label>RUNTIME</Label>
             <Input placeholder="Runtime" className="MovieInput"></Input>
-            <Button outline color="danger">Reset</Button> <Button color="danger">Submit</Button>
+            <div className="Footer">
+                <Button outline color="danger">Reset</Button> <Button color="danger">Submit</Button>
+            </div>
         </>)
     }
 }

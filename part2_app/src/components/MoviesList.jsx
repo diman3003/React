@@ -1,5 +1,6 @@
 import React from 'react';
 import MovieCard from './MovieCard.jsx'
+import Modal from 'react-modal'
 
 let movies = [
     {

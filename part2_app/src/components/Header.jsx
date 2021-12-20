@@ -6,17 +6,7 @@ import Image from "../img/MoviesTop.png"
 
 Modal.setAppElement("#root");
 
-const Custom = {
-    content: {
-      top: '50%',
-      left: '50%',
-      right: '50%',
-      bottom: 'auto',
-      marginRight: '-50%',
-      transform: 'translate(-50%, -50%)',
-    },
-    color: 'red'
-  };
+
 
 export default function ARR() {
 
@@ -34,7 +24,7 @@ export default function ARR() {
                 <td width="100px"></td>
                 <td width="80%"></td>
                 <td width="200px">
-                    <Button outline color="danger" onClick={toggleModal}><b>+ ADD MOVIE</b></Button>
+                    <Button className="CloseButton" outline color="danger" onClick={toggleModal} style={{color: "white"}}><b>+ ADD MOVIE</b></Button>
                 </td>
             </tr>
             <tr style={{ verticalAlign: 'bottom'}}>
@@ -49,7 +39,7 @@ export default function ARR() {
             </tr>
             </thead>
         </table>
-        <Modal isOpen={isOpen} onRequestClose={toggleModal} style={Custom}>
+        <Modal id="Add" className="AddMovieModal" isOpen={isOpen} onRequestClose={toggleModal}>
            <AddMovie />
         </Modal>
     </div>)
