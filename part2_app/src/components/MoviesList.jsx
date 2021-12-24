@@ -2,39 +2,8 @@ import React from 'react';
 import MovieCard from './MovieCard.jsx'
 import Modal from 'react-modal'
 
-let movies = [
-    {
-        title: "Dances with Wolves",
-        description: "Western witn Kevin Costner",
-        id: '123'
-    },
-    {
-        description: "Description",
-        id: "231"
-    },
-    {
-        title: "Movie one",
-        id: "321"
-    },
-    {
-        title: "Movie two",
-        id: "111"
-    },
-    {
-        title: "Movie three",
-        id: "221"
-    },
-    {
-        title: "Movie fore",
-        id: "322"
-    },
-    {
-        title: "Movie five",
-        id: "122"
-    }
-]
 
-export default function MoviesList(){
+export default function MoviesList({movies}){
     return(
         <>
             {movies.map((movies) =>(
@@ -42,6 +11,7 @@ export default function MoviesList(){
                     title={movies.title}
                     description={movies.description}
                     key={movies.id}
+                    id={movies.id}
                 />
             ))}
         </>

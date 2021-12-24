@@ -1,25 +1,23 @@
-import React, {useState} from "react";
+import React, {Component} from "react";
 import { Button, Input, Label } from 'reactstrap'
 import $ from 'jquery';
 //import { MDBCol, MDBInput } from "mdbreact";
 
-function close()
+function ok(movies)
 {
-    alert(this.toggleModal);
+    alert(movies.id +" movie has been edited.");
 }
 
-class AddMovie extends React.Component
+const AddMovie = ({movies, headTitle, closeFunc}) =>
 {
-    render()
-    {
         return(
         <>
             <div className="CloseButton" >
-                <Button outline color="black" style={{color: "white"}} onClick={close}><h2>X</h2></Button>
+                <Button outline color="black" style={{color: "white"}} onClick={() => closeFunc(false)}><h2>X</h2></Button>
             </div>
-            <h1>ADD MOVIE</h1>
+            <h1>{headTitle}</h1>
             <Label>TITLE</Label>
-            <Input placeholder="Title" className="MovieInput"></Input>
+            <Input placeholder="Title" className="MovieInput" readOnly="false" value={movies.title}></Input>
             <Label>RELEASE DATE</Label>
             <Input placeholder="Select Date" type="date" className="MovieInput"></Input>
             <Label>MOVIE URL</Label>
@@ -31,10 +29,9 @@ class AddMovie extends React.Component
             <Label>RUNTIME</Label>
             <Input placeholder="Runtime" className="MovieInput"></Input>
             <div className="Footer">
-                <Button outline color="danger">Reset</Button> <Button color="danger">Submit</Button>
+                <Button outline color="danger" >Reset</Button> <Button color="danger" onClick={() => ok(movies)}>Submit</Button>
             </div>
         </>)
-    }
 }
 
 export default AddMovie
